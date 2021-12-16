@@ -2,13 +2,13 @@ import React from 'react';
 
 declare global {
     namespace JSX {
-      interface IntrinsicElements {
-        'a-scene': React.DetailedHTMLProps<any, any>;
-        'a-marker': React.DetailedHTMLProps<any, any>;
-        'a-entity': React.DetailedHTMLProps<any, any>;
-      }
+        interface IntrinsicElements {
+            'a-scene': React.DetailedHTMLProps<any, any>;
+            'a-marker': React.DetailedHTMLProps<any, any>;
+            'a-entity': React.DetailedHTMLProps<any, any>;
+        }
     }
-  }
+}
 
 interface Props {
     images: string[];
@@ -18,19 +18,27 @@ class ImageTileList extends React.Component<Props, {}> {
 
 
     render() {
+        // console.log(this.props)
         return (
             <div>
-                <a-scene embedded arjs>
-                    <a-marker preset="hiro">
-                        <a-entity
-                            position="0 0 0"
-                            scale="0.05 0.05 0.05"
-                            gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
-                        ></a-entity>
-                    </a-marker>
-                    <a-entity camera></a-entity>
-                </a-scene>
+                {/* needs to be inserted above body? */}
+                <div dangerouslySetInnerHTML={{
+                    __html: `
+                    <a-scene arjs="sourceType: webcam; debugUIEnabled: true;">
+                    <a-anchor>
+                      <a-box
+                        position="0 0.5 0"
+                        material="opacity: 0.5; side:double; color:red;"
+                      >
+                      </a-box>
+                    </a-anchor>
+                    <a-camera-static />
+                  </a-scene>`
+            }}
+                ></div>
+
                 {this.props.images.map((image: any) => {
+                    // console.log(image)
                     return (
                         <div>
                             <img src={image?.image_preview_url}></img>

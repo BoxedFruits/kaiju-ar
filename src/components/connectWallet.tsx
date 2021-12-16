@@ -37,14 +37,11 @@ class ConnectAndFetchImages extends React.Component<{}, State>{
     }
 
     public fetchImages() {
-        console.log("fetchImages")
+        // console.log("fetchImages")
         fetch(`https://testnets-api.opensea.io/api/v1/assets?owner=${this.state.address}&asset_contract_address=${kaijuAddress}&order_direction=desc&offset=0&limit=50`, options)
             .then(response => response.json())
             .then(response => { 
-                console.log(response)
-                response.assets.forEach(element => {
-                    console.log(element?.image_preview_url) 
-                });
+                // console.log(response)
                 this.setState(() => ({
                     images: response.assets
                 }));
