@@ -16,17 +16,11 @@ interface Props {
 
 class ImageTileList extends React.Component<Props, {}> {
     handleClick = (elem) => { // Type this?
-        console.log(elem.target.src)
-        
         const linkTob64 = btoa(encodeURIComponent(elem.target.src));
-
-        window.location.href = `./viewAr.html?img=`+linkTob64;
-        console.log('./viewAr.html?img='+ linkTob64)
+        window.location.href = `./viewAr.html?img=` + linkTob64;
     };
 
     render() {
-        // console.log(this.props)
-        //https://lh3.googleusercontent.com/RiXSQfm46vFdBJWE8t-oNq7lwdOeHSU5_Tt8CIlp_-7L0vCpKENkBDYArDeDyATobSc8UF9g8FybgxXGU7rEbx-TziFc5rNFC4ebpQ=s250
         return (
             <div>
                 {this.props.images.map((image: any) => {

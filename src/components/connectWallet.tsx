@@ -2,7 +2,7 @@ import React from "react";
 import ImageTileList from "./imageTileList";
 declare let window: any;
 
-const kaijuAddress = '0xcc14dd8e6673fee203366115d3f9240b079a4930';
+const kaijuAddress = '0xcc14dd8e6673fee203366115d3f9240b079a4930'; // Currently crypto_dinosaur
 const options = { method: 'GET' };
 
 interface State {
@@ -11,7 +11,6 @@ interface State {
 };
 
 // Connect wallet and fetch images
-
 class ConnectAndFetchImages extends React.Component<{}, State>{
 
     public images = '';
@@ -54,7 +53,6 @@ class ConnectAndFetchImages extends React.Component<{}, State>{
                 {this.state.address === '' && this.state.images.length === 0 ? <button onClick={this.connectWallet.bind(this)}>Connect</button> :
                     <ImageTileList images={this.state.images}></ImageTileList>
                 }
-                <a href="./viewAr.html">go to ar</a>
             </div>
         );
     }
