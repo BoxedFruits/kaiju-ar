@@ -28,7 +28,6 @@ class ConnectAndFetchImages extends React.Component<{}, State>{
                 this.setState(() => ({
                     address: accounts[0]
                 }));
-
                 this.fetchImages();
             }
         } catch (e) {
@@ -55,6 +54,7 @@ class ConnectAndFetchImages extends React.Component<{}, State>{
                 {this.state.address === '' && this.state.images.length === 0 ? <button onClick={this.connectWallet.bind(this)}>Connect</button> :
                     <ImageTileList images={this.state.images}></ImageTileList>
                 }
+                <a href="./viewAr.html">go to ar</a>
             </div>
         );
     }

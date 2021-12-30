@@ -15,33 +15,25 @@ interface Props {
 }
 
 class ImageTileList extends React.Component<Props, {}> {
+    handleClick = (elem) => { // Type this?
+        console.log(elem.target.src)
+        
+        const linkTob64 = btoa(encodeURIComponent(elem.target.src));
 
+        window.location.href = `./viewAr.html?img=`+linkTob64;
+        console.log('./viewAr.html?img='+ linkTob64)
+    };
 
     render() {
         // console.log(this.props)
+        //https://lh3.googleusercontent.com/RiXSQfm46vFdBJWE8t-oNq7lwdOeHSU5_Tt8CIlp_-7L0vCpKENkBDYArDeDyATobSc8UF9g8FybgxXGU7rEbx-TziFc5rNFC4ebpQ=s250
         return (
             <div>
-                {/* needs to be inserted above body? */}
-                <div dangerouslySetInnerHTML={{
-                    __html: `
-                    <a-scene arjs="sourceType: webcam; debugUIEnabled: true;">
-                    <a-anchor>
-                      <a-box
-                        position="0 0.5 0"
-                        material="opacity: 0.5; side:double; color:red;"
-                      >
-                      </a-box>
-                    </a-anchor>
-                    <a-camera-static />
-                  </a-scene>`
-            }}
-                ></div>
-
                 {this.props.images.map((image: any) => {
-                    // console.log(image)
+                    console.log(image)
                     return (
                         <div>
-                            <img src={image?.image_preview_url}></img>
+                            <img src={image?.image_preview_url} onClick={this.handleClick.bind(this)}></img>
                         </div>
                     )
                 })}
