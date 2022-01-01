@@ -34,11 +34,23 @@ class ConnectAndFetchImages extends React.Component<{}, State>{
         }
     }
 
-    public fetchImages() {
-        // console.log("fetchImages")
-        fetch(`https://testnets-api.opensea.io/api/v1/assets?owner=${this.state.address}&asset_contract_address=${kaijuAddress}&order_direction=desc&offset=0&limit=50`, options)
+    public useAddress() {
+        const addressInput: HTMLInputElement = document.getElementById('eth_address') as HTMLInputElement;
+
+        if (addressInput.value.length != 42) { //Maybe do this feedback on the page
+            alert("Please input a valid Ethreum Address");
+            return;
+        }
+
+        this.fetchImages(addressInput.value)
+    };
+
+    public fetchImages(address?: string) {
+        console.log(address)
+        const userAddress = address ? address : this.state.address;
+        fetch(`https://testnets-api.opensea.io/api/v1/assets?owner=${userAddress}&asset_contract_address=${kaijuAddress}&order_direction=desc&offset=0&limit=50`, options)
             .then(response => response.json())
-            .then(response => { 
+            .then(response => {
                 // console.log(response)
                 this.setState(() => ({
                     images: response.assets
@@ -50,7 +62,13 @@ class ConnectAndFetchImages extends React.Component<{}, State>{
     render() {
         return (
             <div>
-                {this.state.address === '' && this.state.images.length === 0 ? <button onClick={this.connectWallet.bind(this)}>Connect</button> :
+                {this.state.address === '' && this.state.images.length === 0 ? <div>
+                    <button onClick={this.connectWallet.bind(this)}>Connect</button>
+                    <div>
+                        <input id="eth_address" type="text" placeholder="Or enter your Eth address" />
+                        <button onClick={this.useAddress.bind(this)}>Submit</button>
+                    </div>
+                </div> :
                     <ImageTileList images={this.state.images}></ImageTileList>
                 }
             </div>
