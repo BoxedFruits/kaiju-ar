@@ -1,6 +1,6 @@
 <!-- AR.js by @jerome_etienne - github: https://github.com/jeromeetienne/ar.js - info: https://medium.com/arjs/augmented-reality-in-10-lines-of-html-4e193ea9fdbf -->
 
-<script>
+<script> // try to insert the whole thing here instead of doing a timeout. it forces users to reload the app
   var url = new URL(window.location);
   var params = new URLSearchParams(url.search);
 
@@ -19,7 +19,7 @@
     <a-assets id="my-assets" timeout="2500">
       <img id="box" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/233187/crate-texture.jpg" crossorigin="anonymous">
     </a-assets>
-    <a-box src='#box' position='0 0 0' rotation="0 0 0" material='opacity: 1;'></a-box>
+    <a-box src='#box' look-controls position='0 0 0' rotation="0 0 0" material='opacity: 1;'></a-box>
     <a-marker-camera preset='hiro'></a-marker-camera>
   </a-scene>
 </body>
