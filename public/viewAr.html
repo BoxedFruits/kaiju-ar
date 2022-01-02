@@ -1,0 +1,29 @@
+<!-- AR.js by @jerome_etienne - github: https://github.com/jeromeetienne/ar.js - info: https://medium.com/arjs/augmented-reality-in-10-lines-of-html-4e193ea9fdbf -->
+
+<script>
+  var url = new URL(window.location);
+  var params = new URLSearchParams(url.search);
+
+  // img will be b64 decoded to make it a little prettier
+  var previewUrl = decodeURIComponent(atob(params.get('img')))
+
+  setTimeout(() => {
+    document.getElementById('my-assets').innerHTML = "<img id='box' src='" + previewUrl + "' crossorigin='anonymous'>";
+  }, 1000);
+
+</script>
+
+<body style='margin : 0px; overflow: hidden;'>
+  <a-scene embedded arjs='sourceType: webcam;'
+    inspector="url: https://aframe.io/aframe-inspector/dist/aframe-inspector.js">
+    <a-assets id="my-assets" timeout="3000">
+      <img id="box" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/233187/crate-texture.jpg" crossorigin="anonymous">
+    </a-assets>
+    <a-box src='#box' position='0 0.5 0' material='opacity: 1;'></a-box>
+    <a-marker-camera preset='hiro'></a-marker-camera>
+  </a-scene>
+</body>
+
+<script
+  src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/examples/vendor/aframe/build/aframe.min.js"></script>
+<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"></script>

@@ -11,3 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+#arjs-video {
+  z-index: 0 !important; 
+}
+
+video {
+  z-index:0 !important
+}
+
+.a-canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
