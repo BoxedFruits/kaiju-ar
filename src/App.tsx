@@ -7,9 +7,10 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
+        <div>
+          <img id='logo' src='KK_logo.png'></img>
+        </div>
         <ConnectAndFetchImages/>
-        </header>
       </div>
     )
   }

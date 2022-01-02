@@ -60,12 +60,12 @@ class ConnectAndFetchImages extends React.Component<{}, State>{
 
     render() {
         return (
-            <div>
+            <div className="main-container">
                 {this.state.address === '' && this.state.images.length === 0 ? <div>
-                    <button onClick={this.connectWallet.bind(this)}>Connect</button>
-                    <div>
+                    <button className="my-button" onClick={this.connectWallet.bind(this)}>Connect</button>
+                    <div className=" input-container">
                         <input id="eth_address" type="text" placeholder="Or enter your Eth address" />
-                        <button onClick={this.useAddress.bind(this)}>Submit</button>
+                        <button className="my-button submit-button" onClick={this.useAddress.bind(this)}>SUBMIT</button>
                     </div>
                 </div> :
                     <ImageTileList images={this.state.images}></ImageTileList>
