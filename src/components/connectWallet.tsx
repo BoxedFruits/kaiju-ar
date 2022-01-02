@@ -6,6 +6,7 @@ const kaijuAddress = '0x0c2E57EFddbA8c768147D1fdF9176a0A6EBd5d83'; // Currently 
 //0x0c2E57EFddbA8c768147D1fdF9176a0A6EBd5d83 Kaiju address
 //0xcc14dd8e6673fee203366115d3f9240b079a4930 testing address
 //0x0a2c2cead92586a4ba3f6fa9c61a2b9ce2529b6d kaiju team wallet
+//0x5fce1aa0989e0e679d795566b2b5ec11c27bbf73 spinny bois
 const options = { method: 'GET' };
 interface State {
     address: string;
