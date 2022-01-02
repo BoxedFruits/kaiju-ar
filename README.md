@@ -1,3 +1,9 @@
+TODO:
+
+- []Refactor the insertion of the custom AR img to be more stable.
+- Styling
+- Change to have the img be kaiju
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -12,7 +12,6 @@ interface State {
 
 // Connect wallet and fetch images
 class ConnectAndFetchImages extends React.Component<{}, State>{
-
     public images = '';
 
     state: State = {
@@ -37,7 +36,7 @@ class ConnectAndFetchImages extends React.Component<{}, State>{
     public useAddress() {
         const addressInput: HTMLInputElement = document.getElementById('eth_address') as HTMLInputElement;
 
-        if (addressInput.value.length != 42) { //Maybe do this feedback on the page
+        if (addressInput.value.length !== 42) { //Maybe do this feedback on the page
             alert("Please input a valid Ethreum Address");
             return;
         }

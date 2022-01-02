@@ -1,21 +1,11 @@
 import React from 'react';
 
-declare global {
-    namespace JSX {
-        interface IntrinsicElements {
-            'a-scene': React.DetailedHTMLProps<any, any>;
-            'a-marker': React.DetailedHTMLProps<any, any>;
-            'a-entity': React.DetailedHTMLProps<any, any>;
-        }
-    }
-}
-
 interface Props {
     images: string[];
 }
 
 class ImageTileList extends React.Component<Props, {}> {
-    handleClick = (elem) => { // Type this?
+    handleClick = (elem) => {
         const linkTob64 = btoa(encodeURIComponent(elem.target.src));
         window.location.href = `./viewAr.html?img=` + linkTob64;
     };
