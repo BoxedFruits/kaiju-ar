@@ -2,9 +2,11 @@ import React from "react";
 import ImageTileList from "./imageTileList";
 declare let window: any;
 
-const kaijuAddress = '0xcc14dd8e6673fee203366115d3f9240b079a4930'; // Currently crypto_dinosaur
+const kaijuAddress = '0x0c2E57EFddbA8c768147D1fdF9176a0A6EBd5d83'; // Currently crypto_dinosaur
+//0x0c2E57EFddbA8c768147D1fdF9176a0A6EBd5d83 Kaiju address
+//0xcc14dd8e6673fee203366115d3f9240b079a4930 testing address
+//0x0a2c2cead92586a4ba3f6fa9c61a2b9ce2529b6d kaiju team wallet
 const options = { method: 'GET' };
-
 interface State {
     address: string;
     images: any[];
@@ -47,7 +49,7 @@ class ConnectAndFetchImages extends React.Component<{}, State>{
     public fetchImages(address?: string) {
         console.log(address)
         const userAddress = address ? address : this.state.address;
-        fetch(`https://testnets-api.opensea.io/api/v1/assets?owner=${userAddress}&asset_contract_address=${kaijuAddress}&order_direction=desc&offset=0&limit=50`, options)
+        fetch(`https://api.opensea.io/api/v1/assets?owner=${userAddress}&asset_contract_address=${kaijuAddress}&order_direction=desc&offset=0&limit=50`, options)
             .then(response => response.json())
             .then(response => {
                 // console.log(response)

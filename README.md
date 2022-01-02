@@ -1,8 +1,9 @@
 TODO:
 
-- []Refactor the insertion of the custom AR img to be more stable.
-- Styling
-- Change to have the img be kaiju
+- Refactor the insertion of the custom AR img to be more stable.
+- ~~Styling~~
+- ~~Change to have the img be kaiju~~
+- Add turntable to viewable NFT
 
 # Getting Started with Create React App
 
