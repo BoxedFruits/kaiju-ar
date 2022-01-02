@@ -11,6 +11,7 @@ class ImageTileList extends React.Component<Props, {}> {
     };
 
     render() {
+        // If no images. show message
         return (
             <div>
                 {this.props.images.map((image: any) => {

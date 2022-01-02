@@ -4,8 +4,8 @@ TODO:
 - ~~Styling~~
 - ~~Change to have the img be kaiju~~
 - Add turntable to viewable NFT
-- use custom marker
-- add ability to use metamask mobile?
+- use custom marker 
+- test ability to use metamask mobile?
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
