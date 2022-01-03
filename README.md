@@ -4,7 +4,7 @@ TODO:
 - ~~Styling~~
 - ~~Change to have the img be kaiju~~
 - Add turntable to viewable NFT (can't be done because of opensea api doesnt support polygon. can try to do a work around in the future?)
-- use custom marker 
+- use custom marker (too much hassle to try and get this down)
 - test ability to use metamask mobile?
 # Getting Started with Create React App
 
