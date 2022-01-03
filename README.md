@@ -4,6 +4,7 @@ Small project using AR.js to view Kaiju Kingz in AR using marker based recogniti
 
 Demo:
 
+https://user-images.githubusercontent.com/34636700/147894514-1e68e845-a184-4438-866c-1f5bff359da4.mp4
 
 
 Requirements:
