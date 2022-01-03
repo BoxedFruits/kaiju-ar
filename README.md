@@ -1,52 +1,29 @@
+Link: https://kaiju-ar.herokuapp.com
+
+Small project using AR.js to view Kaiju Kingz in AR using marker based recognition. I was able to achieve that for the most part but because of the way that the library makes assumptions about the structure of the HTML, I had to make a hacky a solution in order to use it along side React. I wanted to include the airdropped Kaiju Turnables but since the OpenSea API does not yet support Polygon that will have to wait for the future or if I feel like making a workaround. 
+
+Demo:
+
+
+
+Requirements:
+- Hiro Marker (https://upload.wikimedia.org/wikipedia/commons/4/48/Hiro_marker_ARjs.png). You are able to print it out or have this on another screen to scan.
+- A phone or device that has webGL or webRTC
+
+How to use:
+
+1) Go to website
+2) Use either your metamask browser to connect to the webapp or input your Ethereum wallet that holds Kaiju Kingz NFTs
+3) Accept permissions to allow the website to use your camera
+4) Refresh the page (This is a current workaround. Will try to improve this in the future)
+5) Hold your camera up to the Hiro Marker
+
+
 TODO:
 
-- []Refactor the insertion of the custom AR img to be more stable.
-- Styling
-- Change to have the img be kaiju
-
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Refactor the insertion of the custom AR img to be more stable.
+- ~~Styling~~
+- ~~Change to have the img be kaiju~~
+- ~~Add Kaiju turntable to viewable NFT (can't be done because of opensea api doesnt support polygon. can try to do a work around in the future?)~~
+- ~~use custom marker (too much hassle to try and get this down. known to be a hard thing to do with this AR.js)~~
+- ~~test ability to use metamask mobile?~~
